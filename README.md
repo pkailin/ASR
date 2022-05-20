@@ -2,9 +2,13 @@
 
 Model currently selected is RIVA Quartznet ASR English. More information can be found at: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/speechtotext_en_us_quartznet 
 
+# Testing of GPU usage with Singapore Corpus 
+
 'nsc_corpus_training.ipynb' is a Jupyter notebook to test out fine-tuning of the Quartznet model. The dataset used is from the NSC Singapore English Corpus Part 1. The model was trained with 23871 lines, validated with 2373 lines and tested with 2373 lines. The out-of-the-box model had a word error rate of 0.089951. Training was done by freezing the encoder and unfreezing the batch normalisation, running for a total of 10 epochs in 4237.57 seconds with 1 GPU utilised. After training, the word error rate increased to 0.148990 instead.
 
 'nsc_corpus_training.py' is a Python script to test out the utilisation of 4 GPUs in training. Training and validation batch size was changed to 16 to prevent 'CUDA error: out of memory'. For the same number of epochs and the same training and validation dataset, time taken for training was 1760.28414 seconds. 
+
+# Fine-tuning Pre-trained Model with Location Data
 
 'location_training_test1_encoder.ipynb' involves fine-tuning the model with 9 audio files, with a total duration of 0.01 hours, ran for a total of 50 epochs. The new dataset consists of locations, namely bishan, boon lay, bukit batok, bukit gombak, jurong, sembawang, tiong bahru and tuas. The audio files are resampled at 16kHz before training. Training the model without freezing the encoder results in more accurate location predictions. However, when tested with the original NSC Singapore Corpus, the WER increased to 0.729195. Training the model with a frozen encoder results in less accurate location predictions but the WER of the original NSC Singapore Corpus also increased significantly to 0.519756.  
 **Conclusion: Size of dataset needs to increase.**
