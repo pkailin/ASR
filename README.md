@@ -20,7 +20,7 @@ Model currently selected is RIVA Quartznet ASR English. More information can be 
 
 # Implementing ASR on Botpress 
 
-'speechToTextv1 is a chrome extension built that uses the Web Speech API to transcribe speech. The transcript will appear in a small textbox on the bottom right of the screen and 
+'speechToTextv1 is a chrome extension built that uses the Web Speech API to transcribe speech. The transcript will appear in a small textbox on the bottom right of the screen and in any textarea element. Since the 
 
 # Using TTS FastPitch Model for Synthetic Voice Generation
 'fastPitch_finetuning.ipynb' uses the NSC Corpus to generate a synthetic voice model for each speaker. 
