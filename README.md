@@ -18,6 +18,10 @@ Model currently selected is RIVA Quartznet ASR English. More information can be 
 
 'location_training_test4_traintestval.ipynb' has the same functionality as 'location_training_test3_batchnorm.ipynb', but with a proper separate unseen location dataset for testing instead of reusing the training dataset. It has 177 audio files for training, 16 files for validation and 16 files for testing. The WER of the original NSC Singapore Corpus increased from 0.04537 to 12.376 after training. Testing on the location training dataset, the WER also decreased from 1.15217 to 0.913304.
 
+# Implementing ASR on Botpress 
+
+'speechToTextv1 is a chrome extension built that uses the Web Speech API to transcribe speech. The transcript will appear in a small textbox on the bottom right of the screen and 
+
 # Using TTS FastPitch Model for Synthetic Voice Generation
 'fastPitch_finetuning.ipynb' uses the NSC Corpus to generate a synthetic voice model for each speaker. 
 
